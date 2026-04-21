@@ -24,7 +24,6 @@ export default function ReviewPage() {
       }
     }
 
-    const ids = new Set([...queueIds, ...dueIds])
     return quizQuestions
       .filter((q) => ids.has(q.id))
       .sort(() => Math.random() - 0.5)
