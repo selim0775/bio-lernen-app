@@ -13,7 +13,7 @@ export default function ReviewPage() {
   const { progress, recordAnswer } = useProgress()
 
   const reviewQuestions = useMemo(() => {
-    const queueIds = new Set(progress.reviewQueue)
+    const ids = new Set([...Array.from(queueIds), ...Array.from(dueIds)])
     const dueIds = new Set<string>()
 
     for (const [, tp] of Object.entries(progress.topics)) {
